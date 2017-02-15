@@ -3,6 +3,7 @@ import Auth from './components/Auth.vue';
 import Stacks from './components/Stacks.vue'
 import NewStack from './components/NewStack.vue'
 import Stack from './components/Stack.vue'
+import Practice from './components/Practice.vue'
 
 const checkFromAuth = (to, from, next) => {
   const query = window.location.search.substr(1).split('=');
@@ -26,6 +27,7 @@ const router = new VueRouter({
     {path: '/stack/:id', component: Stack},
     {path: '/newstack', component: NewStack},
     { path: '/auth', component: Auth },
+    {path: '/practice/:id', component: Practice},
   ],
 });
 router.beforeEach((to, from, next) => {

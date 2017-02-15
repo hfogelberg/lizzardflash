@@ -24,11 +24,13 @@ export default {
 
       let card = {
         front: this.front,
-        back: this.back
+        back: this.back,
+        knowIt: false,
+        show: false
       }
 
       const dbRef = firebase.database().ref().child(`stacks/${userId}/${stackId}`)
-      dbRef.child('cards').push(card)
+      dbRef.child('cards').push({card})
 
       this.front = ''
       this.back = ''
