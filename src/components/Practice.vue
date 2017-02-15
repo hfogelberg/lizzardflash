@@ -32,10 +32,8 @@ export default {
     'back': Back
   },
 
-
   created() {
     this.randomCards = this.$store.getters.randomCards
-    this.randomCards[0].show = true
   },
 
   methods: {
@@ -45,7 +43,6 @@ export default {
       this.showBack = true
     }
   }
-
 }
 </script>
 

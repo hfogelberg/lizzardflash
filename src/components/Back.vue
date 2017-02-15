@@ -23,7 +23,7 @@
 
           knowIt() {
             this.card.knowIt = true
-            this.$store.dispatch('editCard', this.card)
+            // this.$store.dispatch('editCard', this.card)
           }
     }
   }

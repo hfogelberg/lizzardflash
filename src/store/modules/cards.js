@@ -2,10 +2,15 @@ var shuffle = require('knuth-shuffle').knuthShuffle
 
 const state = {
   cards: [],
-  randomCards: []
+  randomCards: [],
+  cardIndex: 0
 }
 
 const getters = {
+  cardIndex:state => {
+      return state.cardIndex
+  },
+
   cards:state=> {
     return state.cards
   },
@@ -15,18 +20,33 @@ const getters = {
 }
 
 const mutations = {
+  cardIndex:(state, index)=>{
+
+  },
+
   cards:(state, cards) => {
     state.cards=cards
   },
 
   randomCards:(state, payload) => {
-    let randomCards = shuffle(payload.slice(0))
-    console.log('randomCards', randomCards);
+    var randomCards = shuffle(payload.slice(0))
+    randomCards[0].show = true
     state.randomCards = randomCards
   }
 }
 
 const actions = {
+  nextCard:({commit}) => {
+    var cards = state.randomCards
+    cards.forEach((card) => {
+      card.show = false
+    })
+
+    state.cardIndex ++
+    cards[state.cardIndex].show = true
+    state.randomCards = cards
+  },
+
   setCards:({commit}, payload) => {
     commit('cards', payload)
     commit('randomCards', payload)
