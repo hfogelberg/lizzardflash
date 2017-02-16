@@ -35,30 +35,12 @@ import firebase from 'firebase'
     },
 
     created() {
-      this.$store.dispatch('saveStackStatus', 'CREATED')
-
       let user = firebase.auth().currentUser
       if (user) {
-        console.log('New Stack. User is logged in');
         this.uid = user.uid
         this.displayName = user.displayName
-        console.log(this.displayName + ' ' + this.uid);
-      } else {
-        console.log('New Stack. User is not logged in');
       }
     },
-
-    // computed: {
-    //   saveStackStatus() {
-    //     let status = this.$store.getters.saveStackStatus
-    //     if (status === 'OK') {
-    //       this.$router.push('/stacks')
-    //     } else {
-    //       //TODO
-    //       console.log('err');
-    //     }
-    //   }
-    // },
 
     methods: {
     createStack() {
@@ -69,9 +51,8 @@ import firebase from 'firebase'
         comment: this.comment
       }
 
-      firebase.database().ref().child('stacks/' + this.uid).push({stack})
+      firebase.database().ref().child(this.uid + '/stacks').push(stack)
       .then((doc) => {
-        console.log('Save stack OK', doc.val());
         this.$router.push('/stacks')
       })
       .catch((err)=>{

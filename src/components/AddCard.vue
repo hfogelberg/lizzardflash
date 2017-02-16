@@ -29,8 +29,8 @@ export default {
         show: false
       }
 
-      const dbRef = firebase.database().ref().child(`stacks/${userId}/${stackId}`)
-      dbRef.child('cards').push({card})
+      const dbRef = firebase.database().ref().child(`${userId}/stacks//${stackId}`)
+      dbRef.child('cards').push(card)
 
       this.front = ''
       this.back = ''

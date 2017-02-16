@@ -2,6 +2,7 @@
   <div class="stacks-page">
     <app-header :user='displayName'></app-header>
     <h2>Stacks</h2>
+    <pre></pre>
     <router-link to="newstack" class='btn btn-lg btn-new-stack pull-right'>
       <i class="glyphicon glyphicon-plus"></i>New Stack
     </router-link>
@@ -25,42 +26,49 @@ export default {
   data() {
     return {
       stacks: [],
-      displayName: ''
+      displayName: '',
+      userId: ''
     }
   },
 
-  watch: {
-    'saveStackStatus': ()=> {},
-    'saveStackStatus': ()=> {}
+  created() {
+    console.log('Created');
+    this.userId = this.$store.getters.userId
+    this.displayName = this.$store.getters.displayName
+    if (this.userId !== '') {
+      this.getStacks()
+    } else {
+      this.$router.push('/auth')
+    }
+  },
+
+  methods: {
+    getStacks() {
+      console.log('Get Stacks');
+      console.log('userId ' + this.userId);
+      const dbRef = firebase.database().ref().child(this.userId + '/stacks')
+
+      dbRef.on('value', (snap)=>{
+        console.log(snap.val());
+        snap.forEach((data)=>{
+        let val = data.val()
+        let stack = {
+            key: data.key,
+            title: val.title,
+            fromLang: val.fromLang,
+            toLang: val.toLang,
+            comment: val.comment
+          }
+          console.log('stack', stack);
+          this.stacks.push(stack)
+        })
+      })
+    }
   },
 
   components: {
     'stack': StacklistItem,
     'app-header': Header
-  },
-
-  created() {
-    let userId = this.$store.getters.userId
-    this.displayName = this.$store.getters.displayName
-
-    const dbRef = firebase.database().ref().child('stacks/' + userId)
-
-    dbRef.on('value', (snap)=>{
-      // console.log('snap', snap.val())
-      snap.forEach((data)=>{
-      let val = data.val().stack
-      console.log(val);
-        let stack = {
-          key: data.key,
-          title: val.title,
-          fromLang: val.fromLang,
-          toLang: val.toLang,
-          comment: val.comment
-        }
-        console.log('stack', stack);
-        this.stacks.push(stack)
-      })
-    })
   }
 }
 </script>

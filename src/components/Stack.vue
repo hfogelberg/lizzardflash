@@ -3,9 +3,9 @@
     <app-header :user='displayName'></app-header>
     <h1>Stack</h1>
 
-    <h2>Title {{stack.title}}</h2>
-    <div>{{stack.fromLang}} - {{stack.toLang}}</div>
-    <div>{{stack.comment}}</div>
+    <h2>Title {{title}}</h2>
+    <div>{{fromLang}} - {{toLang}}</div>
+    <div>{{comment}}</div>
     <hr>
     <router-link :to="'/practice/' + stackId" class='btn btn-lg btn-warning'>Practice</router-link>
     <hr>
@@ -45,7 +45,9 @@ import AddCard from './AddCard.vue'
 export default {
   data() {
     return {
+      displayName: '',
       stackId: '',
+      userId: '',
       stack: {},
       cards: []
     }
@@ -57,13 +59,12 @@ export default {
   },
 
   created() {
-    console.log('Stack');
-    let userId = this.$store.getters.userId
+    this.userId = this.$store.getters.userId
     this.stackId = this.$route.params.id
-
     this.displayName = this.$store.getters.displayName
 
-    const dbRef = firebase.database().ref().child(`stacks/${userId}/${this.stackId}`)
+
+    const dbRef = firebase.database().ref().child(`${this.userId}/stacks/${this.stackId}`)
     const dbRefCards = dbRef.child('cards')
 
     dbRef.on('value', (snap)=>{
@@ -72,9 +73,7 @@ export default {
 
     dbRefCards.on('value', (snap)=>{
       snap.forEach((data)=>{
-        let val = data.val().card
-        // console.log('Val', val);
-        // console.log('Front ' + val.front);
+        let val = data.val()
 
         let card = {
           key:  data.key,
@@ -83,7 +82,6 @@ export default {
           knowIt: val.knowIt,
           show: val.show
         }
-        console.log('Card', card);
         this.cards.push(card)
       })
 

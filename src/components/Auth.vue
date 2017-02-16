@@ -22,10 +22,6 @@ export default {
         let photo = this.provider.photoURL
         this.photo = photo
 
-        localStorage.setItem('fbPhoto', photo)
-        localStorage.setItem('fbUid', user.uid)
-        localStorage.setItem('fbDisplayName', user.displayName)
-
         this.$store.dispatch('setUser', user)
           .then(()=>this.$router.push('/stacks'))
 

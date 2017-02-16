@@ -22,7 +22,7 @@ const checkFromAuth = (to, from, next) => {
 const router = new VueRouter({
   mode: 'history',
   routes: [
-    { path: '/', component: Stacks, beforeEnter: checkFromAuth },
+    { path: '/', component: Stacks },
     { path: '/stacks', component: Stacks },
     {path: '/stack/:id', component: Stack},
     {path: '/newstack', component: NewStack},
