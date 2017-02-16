@@ -17,7 +17,6 @@ export default {
   props: ['user'],
   methods: {
       signOut() {
-        console.log('signOut');
         firebase.auth().signOut()
         this.$router.push('/auth')
       },

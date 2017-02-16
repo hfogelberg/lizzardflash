@@ -33,14 +33,12 @@ export default {
   },
 
   created() {
-    console.log('Practice');
     this.randomCards = this.$store.getters.randomCards
     this.randomCards[0].show = true
   },
 
   methods: {
     flipCard() {
-      console.log('flipCard')
       this.showFront = false
       this.showBack = true
     }

@@ -14,7 +14,6 @@ export default {
 
   created() {
     firebase.auth().onAuthStateChanged((user) => {
-      console.log('onAuthStateChanged');
       if(user) {
         this.user = user
 

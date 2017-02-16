@@ -29,9 +29,6 @@ export default {
   methods: {
       logOut() {
         firebase.auth().signOut()
-        localStorage.removeItem('fbPhoto')
-        localStorage.removeItem('fbUid')
-        localStorage.removeItem('fbDisplayName')
 
         this.$store.commit('user', '')
         this.$store.commit('userId', '')

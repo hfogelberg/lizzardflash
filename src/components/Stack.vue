@@ -59,7 +59,6 @@ export default {
   },
 
   created() {
-    console.log('Created ', this.cards);
     this.userId = this.$store.getters.userId
     this.stackId = this.$route.params.id
     this.$store.dispatch('setStackId', this.stackId)
@@ -73,10 +72,7 @@ export default {
     })
 
     dbRefCards.on('child_added', (snap)=>{
-      //console.log('Data fetched in child_added', snap.val());
-    //   snap.forEach((data)=>{
         let val = snap.val()
-        console.log('Val ' + val);
 
         let card = {
           key:  snap.key,
@@ -87,11 +83,8 @@ export default {
         }
 
         this.cards.push(card)
-        console.log('this.cards after push: ', this.cards);
-    //   })
-    //
-    //   // TODO remove
-      console.log('Cards before dispatch ', this.cards);
+
+      // TODO handle remove
       this.$store.dispatch('setCards', this.cards)
     })
   }

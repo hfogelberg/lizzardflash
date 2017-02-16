@@ -32,7 +32,6 @@ export default {
   },
 
   created() {
-    console.log('Created');
     this.userId = this.$store.getters.userId
     this.displayName = this.$store.getters.displayName
     if (this.userId !== '') {
@@ -44,12 +43,9 @@ export default {
 
   methods: {
     getStacks() {
-      console.log('Get Stacks');
-      console.log('userId ' + this.userId);
       const dbRef = firebase.database().ref().child(this.userId + '/stacks')
 
       dbRef.on('value', (snap)=>{
-        console.log(snap.val());
         snap.forEach((data)=>{
         let val = data.val()
         let stack = {
@@ -59,7 +55,6 @@ export default {
             toLang: val.toLang,
             comment: val.comment
           }
-          console.log('stack', stack);
           this.stacks.push(stack)
         })
       })
