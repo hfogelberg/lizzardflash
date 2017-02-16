@@ -1,0 +1,13 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/Cellar/node/7.1.0/bin/node /usr/local/bin/firebase --debug init
+[debug] CLI Version:  3.3.0
+[debug] Platform:     darwin
+[debug] Node Version: v7.1.0
+[debug] Time:         Thu Feb 16 2017 09:41:36 GMT+0000 (WET)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[error] 
+[error] Error: There was an error loading firebase.json:
+
+Parse Error: Imported file database.rules.json does not exist
