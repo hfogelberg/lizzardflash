@@ -3,10 +3,10 @@
     <app-header :user='displayName'></app-header>
     <h1>Stack</h1>
 
-    <h2>Title {{title}}</h2>
-    <div>{{fromLang}} - {{toLang}}</div>
-    <div>{{comment}}</div>
-    <hr>
+    <!-- <h2>Title {{stack.title}}</h2>
+    <div>{{stack.fromLang}} - {{stack.toLang}}</div>
+    <div>{{stack.comment}}</div>
+    <hr> -->
     <router-link :to="'/practice/' + stackId" class='btn btn-lg btn-warning'>Practice</router-link>
     <hr>
     <add-card></add-card>
@@ -23,7 +23,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for='card in cards'>
+          <tr v-for='card in cards' v.bind:id="card.key">
             <td>{{card.front}}</td>
             <td>{{card.back}}</td>
             <td>{{card.knowIt}}</td>
@@ -59,10 +59,11 @@ export default {
   },
 
   created() {
+    console.log('Created ', this.cards);
     this.userId = this.$store.getters.userId
     this.stackId = this.$route.params.id
+    this.$store.dispatch('setStackId', this.stackId)
     this.displayName = this.$store.getters.displayName
-
 
     const dbRef = firebase.database().ref().child(`${this.userId}/stacks/${this.stackId}`)
     const dbRefCards = dbRef.child('cards')
@@ -71,20 +72,26 @@ export default {
       this.stack = snap.val().stack;
     })
 
-    dbRefCards.on('value', (snap)=>{
-      snap.forEach((data)=>{
-        let val = data.val()
+    dbRefCards.on('child_added', (snap)=>{
+      //console.log('Data fetched in child_added', snap.val());
+    //   snap.forEach((data)=>{
+        let val = snap.val()
+        console.log('Val ' + val);
 
         let card = {
-          key:  data.key,
+          key:  snap.key,
           front: val.front,
           back: val.back,
           knowIt: val.knowIt,
           show: val.show
         }
-        this.cards.push(card)
-      })
 
+        this.cards.push(card)
+        console.log('this.cards after push: ', this.cards);
+    //   })
+    //
+    //   // TODO remove
+      console.log('Cards before dispatch ', this.cards);
       this.$store.dispatch('setCards', this.cards)
     })
   }

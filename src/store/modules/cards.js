@@ -3,7 +3,8 @@ var shuffle = require('knuth-shuffle').knuthShuffle
 const state = {
   cards: [],
   randomCards: [],
-  cardIndex: 0
+  cardIndex: 0,
+  stackId: ''
 }
 
 const getters = {
@@ -16,10 +17,18 @@ const getters = {
   },
   randomCards:state=>{
     return state.randomCards
+  },
+
+  stackId:state=>{
+    return state.stackId
   }
 }
 
 const mutations = {
+  stackId:(state, stackId) =>{
+      state.stackId = stackId
+  },
+
   cardIndex:(state, index)=>{
 
   },
@@ -31,6 +40,7 @@ const mutations = {
   randomCards:(state, payload) => {
     var randomCards = shuffle(payload.slice(0))
     randomCards[0].show = true
+    console.log('Random cards: ' + randomCards);
     state.randomCards = randomCards
   }
 }
@@ -48,8 +58,13 @@ const actions = {
   },
 
   setCards:({commit}, payload) => {
+    console.log('Setting cards', payload);
     commit('cards', payload)
     commit('randomCards', payload)
+  },
+
+  setStackId:({commit}, payload) => {
+    commit('stackId', payload)
   }
 }
 

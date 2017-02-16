@@ -13,6 +13,8 @@
 </template>
 
 <script>
+  import firebase from 'firebase'
+
   export default {
     props: ['card'],
 
@@ -22,8 +24,12 @@
           },
 
           knowIt() {
-            this.card.knowIt = true
-            // this.$store.dispatch('editCard', this.card)
+            const dbRef = firebase.database().ref().child(`${this.userId}/stacks/${this.stackId}/cards/${this.cardId}`)
+            let update = {
+              knowIt: true
+            }
+
+            
           }
     }
   }
