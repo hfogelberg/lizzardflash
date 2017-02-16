@@ -39,8 +39,6 @@ const mutations = {
 
   randomCards:(state, payload) => {
     var randomCards = shuffle(payload.slice(0))
-    randomCards[0].show = true
-    console.log('Random cards: ' + randomCards);
     state.randomCards = randomCards
   }
 }

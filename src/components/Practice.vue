@@ -11,7 +11,6 @@
         <div class='card' v-show="showBack"><back :card='card'></back></div>
       </li>
     </ul>
-    <pre>{{randomCards}}</pre>
   </div>
 </template>
 
@@ -36,8 +35,7 @@ export default {
   created() {
     console.log('Practice');
     this.randomCards = this.$store.getters.randomCards
-    let cards = this.$store.getters.cards
-    console.log('Practice. Random cards: ', this.randomCards);
+    this.randomCards[0].show = true
   },
 
   methods: {
