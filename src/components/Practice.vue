@@ -3,7 +3,7 @@
     <h2>Practice</h2>
     <hr>
 
-    <router-link :to="'/stack/' + this.$store.getters.stackId" >Home</router-link>
+    <router-link :to="'/stack/' + this.$store.getters.stackId" class='btn btn-back'>Back</router-link>
 
     <ul class='cards-list'>
       <li class="list-unstyled random-card" v-for="card in randomCards" v-show="card.show">
@@ -38,6 +38,22 @@ export default {
   },
 
   methods: {
+    knowIt() {
+      // const dbRef = firebase.database().ref().child(`${this.userId}/stacks/${this.stackId}/cards/${this.cardId}`)
+      // let update = {
+      //   knowIt: true
+      // }
+      this.showFront = true
+      this.showBack = false
+        this.$store.dispatch('nextCard')
+    },
+
+    dontKnowIt() {
+      this.showFront = true
+      this.showBack = false
+        this.$store.dispatch('nextCard')
+    },
+
     flipCard() {
       this.showFront = false
       this.showBack = true
@@ -47,7 +63,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
-  .card {
+  .random-card {
     text-align: center;
   }
 

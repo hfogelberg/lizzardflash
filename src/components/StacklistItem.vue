@@ -17,7 +17,7 @@ export default {
   .stack {
     height: 20vh;
     width: 24vw;
-    border: 2px black;
+    border: 2px #2c3e50;
     color: #ecf0f1;
     background-color: #16a085;
     padding: 0.8vw;
@@ -75,12 +75,12 @@ export default {
 
   @media only screen and (max-width: 767px) {
     .stack {
-      margin: 0 auto;
       height: 30vh;
+      margin-left: 20vw;
       width: 60vw;
-      border: 2px black;
-      color: #555;
-      background-color: rgba(215, 221, 181, 0.72);
+      border: 2px #2c3e50;
+      color: #ecf0f1;
+      background-color: #16a085;
       padding: 10px;
       margin: 10px;
       box-shadow: 5px 5px 2px #555;
@@ -88,7 +88,12 @@ export default {
     }
 
     h4 {
-       font-size: 6vw;
+       font-size: 7vw;
     }
-  }
+
+    .stack-lang {
+        font-size: 5vw;
+        background-color: #16a085;
+    }
+}
 </style>

@@ -1,6 +1,6 @@
 <template lang="html">
-  <div class="front" @click='$parent.flipCard'>
-    <div class="card-title">
+  <div class="card front" @click='$parent.flipCard'>
+    <div class="card-text from">
       {{card.front}}
     </div>
 
@@ -20,16 +20,11 @@ export default {
 
 <style lang="css" scoped>
   .front {
-    width: 300px;
-    height: 300px;
-    border: 1px solid black;
-    position: relative;
+    background-color: #3498db;
   }
 
-  .card-title {
-    text-align: center;
-    font-size: 180%;
-    margin-top: 50px;
-    margin-top: 20px;
+  .from {
+    background-color: #3498db;
+    color: #ecf0f1;
   }
 </style>

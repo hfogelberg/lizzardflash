@@ -1,12 +1,12 @@
 <template lang="html">
-  <div class='back'>
-    <div class='card-title'>
+  <div class='card back'>
+    <div class='card-text to'>
       {{card.back}}
     </div>
     <div class='button-row'>
-      <button class='btn btn-danger dont-know' @click='dontKnowIt'>Don't know it</button>
+      <button class='btn btn-danger dont-know' @click='$parent.dontKnowIt'>Don't know it</button>
       <span>
-        <button class='btn btn-success know' @click='knowIt'>Know it</button>
+        <button class='btn btn-success know' @click='$parent.knowIt'>Know it</button>
       </span>
     </div>
   </div>
@@ -16,48 +16,32 @@
   import firebase from 'firebase'
 
   export default {
-    props: ['card'],
-
-    methods: {
-          dontKnowIt() {
-            this.$store.dispatch('nextCard')
-          },
-
-          knowIt() {
-            const dbRef = firebase.database().ref().child(`${this.userId}/stacks/${this.stackId}/cards/${this.cardId}`)
-            let update = {
-              knowIt: true
-            }
-
-            
-          }
-    }
+    props: ['card']
   }
 </script>
 
 <style lang="css" scoped>
-  .back {
-    height: 300px;
-    width: 300px;
-    border: 1px solid black;
-    position: relative;
-  }
+    .back {
+      background-color: #bdc3c7;
+    }
 
-
-    .card-title {
-      text-align: center;
-      font-size: 180%;
-      margin-top: 50px;
-      margin-top: 20px;
+    .to {
+      color: #2c3e50;
+      background-color: #bdc3c7;
     }
 
     .button-row {
+      background-color: #bdc3c7;
       position: absolute;
-      bottom: 2px;
-      right: 2px;
+      bottom: 4vh;
+      right: 4vh;
     }
 
     .dont-know {
-      margin-right: 10px;
+      margin-right: 4vh;
+    }
+
+    .know-it {
+      margin-right: 4vh;
     }
 </style>
