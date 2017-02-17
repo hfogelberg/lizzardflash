@@ -6,17 +6,16 @@
 }
 
 html {
-  background-color: #fff;
   color: #555;
   font-family: 'Lato', 'Arial', sans-serif;
-  font-size: 20px;
   font-weight: 300;
   text-rendering: optimizeLegibility;
 }
 
+
 h1 {
   text-align: center;
-  font: 200%;
+  font-size: 8vw;
   letter-spacing: 2px;
   word-spacing: 4px;
   margin-bottom: 20px;
@@ -24,8 +23,35 @@ h1 {
 
 h2 {
   text-align: center;
-  font: 150%;
+  font-size: 6vw;
   letter-spacing: 2px;
   word-spacing: 4px;
   margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 5vw;
+}
+
+h4 {
+  font-size: 3.2vw
+}
+
+@media only screen and (max-width: 767px) {
+  h1 {
+    text-align: center;
+    font-size: 10vw;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    margin-bottom: 20px;
+  }
+
+}
+
+p {
+  font-size: 3.0vw;
+}
+
+i {
+  margin-right: 5px;
 }

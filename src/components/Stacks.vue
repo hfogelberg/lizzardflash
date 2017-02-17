@@ -2,7 +2,7 @@
   <div class="stacks-page">
     <app-header :user='displayName'></app-header>
     <h2>Stacks</h2>
-    <pre></pre>
+
     <router-link to="newstack" class='btn btn-lg btn-new-stack pull-right'>
       <i class="glyphicon glyphicon-plus"></i>New Stack
     </router-link>
@@ -69,10 +69,6 @@ export default {
 </script>
 
 <style lang="css" scoped>
-    i {
-      margin-right: 3px;
-    }
-
     .stacks {
       display: inline-block;
     }
