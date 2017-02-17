@@ -4,9 +4,9 @@
       {{card.back}}
     </div>
     <div class='button-row'>
-      <button class='btn btn-danger dont-know' @click='$parent.dontKnowIt'>Don't know it</button>
+      <button class='btn btn-danger dont-know' @click='$parent.dontKnowIt'><img src="/assets/check-mark.svg" alt="Know it" style='icon'></button>
       <span>
-        <button class='btn btn-success know' @click='$parent.knowIt'>Know it</button>
+        <button class='btn btn-success know' @click='$parent.knowIt'><img src="/assets/x-mark.svg" alt="Don´t know it" class='icon'></button>
       </span>
     </div>
   </div>
@@ -43,5 +43,10 @@
 
     .know-it {
       margin-right: 4vh;
+    }
+
+    .icon {
+      height: 8vh;
+      background-color: #bdc3c7;
     }
 </style>

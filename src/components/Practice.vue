@@ -3,7 +3,7 @@
     <h2>Practice</h2>
     <hr>
 
-    <router-link :to="'/stack/' + this.$store.getters.stackId" class='btn btn-back'>Back</router-link>
+    <router-link :to="'/stack/' + this.$store.getters.stackId" class='btn btn-back'><img src="/assets/arrow-left.svg" alt="Go back" class='back-icon'></router-link>
 
     <ul class='cards-list'>
       <li class="list-unstyled random-card" v-for="card in randomCards" v-show="card.show">
@@ -66,5 +66,10 @@ export default {
   .random-card {
     text-align: center;
   }
+
+.back-icon {
+  fill: #ff0000;
+  height: 8vh;
+}
 
 </style>
