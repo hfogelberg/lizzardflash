@@ -18,11 +18,11 @@ export default {
     height: 20vh;
     width: 24vw;
     border: 2px black;
-    color: #555;
-    background-color: rgba(215, 221, 181, 0.72);
+    color: #ecf0f1;
+    background-color: #16a085;
     padding: 0.8vw;
     margin: 1.2vw;
-    box-shadow: 5px 5px 2px #555;
+    box-shadow: 5px 5px 2px #95a5a6;
     border-radius: 15px;
 
     -webkit-transition: all 200ms ease-in;
@@ -36,7 +36,7 @@ export default {
   }
 
   .stack:hover {
-    box-shadow: 0px 0px 150px #000000;
+    box-shadow: 0px 0px 150px #95a5a6;
     z-index: 2;
     -webkit-transition: all 200ms ease-in;
     -webkit-transform: scale(1.1);
@@ -54,6 +54,7 @@ export default {
 
   .stack-lang {
       font-size: 2.5vw;
+      background-color: #16a085;
   }
 
   a:link {
@@ -88,10 +89,6 @@ export default {
 
     h4 {
        font-size: 6vw;
-    }
-
-    .stack-lang {
-        font-size: 4vw;
     }
   }
 </style>

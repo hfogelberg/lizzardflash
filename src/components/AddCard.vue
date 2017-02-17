@@ -1,8 +1,9 @@
 <template lang="html">
   <div class='addCard'>
-    <textarea name="name" rows="4" cols="40" v-model="front" placeholder="Front of card"></textarea>
-    <textarea name="name" rows="4" cols="40" v-model="back" placeholder="Back of card"></textarea>
-    <button @click="saveCard" class='btn btn-primary'>Save</button>
+    <textarea name="name" v-model="front" placeholder="Front of card" class='front'></textarea>
+    <textarea name="name"  v-model="back" placeholder="Back of card" class='back'></textarea>
+    <br>
+    <button @click="saveCard" class='btn btn-lg btn-add'>Save</button>
   </div>
 </template>
 
@@ -40,5 +41,39 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  .addCard {
+    display: inline-block;
+    margin: 0 auto;
+    padding-top: 4vh;
+  }
+
+  .front {
+    margin-left: 5vw;
+    width: 40vw;
+    height: 30vh;
+    font-size: 2.3vw;
+    padding: 0.8vw;
+  }
+
+  .back {
+    margin-right: 5vw;
+    width: 40vw;
+    height: 30vh;
+    font-size: 2.3vw;
+    padding: 0.8vw;
+  }
+
+  .btn-add {
+    float: right;
+    display: block;
+    margin-top: 4vh;
+    margin-right: 5vw;
+    height: 8vh;
+    width: 14vw;
+    font-weight: 400;
+    font-size: 3vw;
+    color: #ecf0f1;
+    background-color: #e67e22;
+  }
 
 </style>

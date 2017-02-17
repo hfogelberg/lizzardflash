@@ -56,7 +56,6 @@ const actions = {
   },
 
   setCards:({commit}, payload) => {
-    console.log('Setting cards', payload);
     commit('cards', payload)
     commit('randomCards', payload)
   },
