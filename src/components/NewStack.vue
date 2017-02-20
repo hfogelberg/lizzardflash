@@ -88,6 +88,5 @@ import firebase from 'firebase'
 
   .btn-newstack {
     border-radius: 80px;
-
   }
 </style>

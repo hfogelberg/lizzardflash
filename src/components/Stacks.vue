@@ -24,7 +24,6 @@
     </div>
 
     <ul class='stacks'  v-else>
-      <!-- <li v-for="stack in stacks" class='stack'> -->
       <li v-for="stack in stacks">
         <stack :stack='stack'></stack>
       </li>
@@ -88,10 +87,6 @@ export default {
 </script>
 
 <style lang="css" scoped>
-
-.stacks-page {
-}
-
   ul.toolbar {
     padding: 0 2em 5em 2em;
     list-style-type: none;
@@ -110,21 +105,4 @@ export default {
       flex-wrap: wrap;
       list-style: none;
     }
-
-    /*li.stack {
-      /*flex: 1;
-      height: 10em;
-      min-width: 20em;
-      margin: 1em;
-    }*/
-
-    /*
-    .btn-new-stack {
-      background-color: #c0392b;
-      color: #ecf0f1;
-    }
-
-    i {
-      background-color: #c0392b;
-    }*/
 </style>

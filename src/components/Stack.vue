@@ -87,6 +87,7 @@ export default {
 <style lang="css" scoped>
   ul.cards {
     display: flex;
+    justify-content: center;
     flex-direction: row;
     flex-flow: stretch;
     flex-wrap: wrap;
