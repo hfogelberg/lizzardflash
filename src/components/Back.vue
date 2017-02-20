@@ -44,9 +44,4 @@
     .know-it {
       margin-right: 4vh;
     }
-
-    .icon {
-      height: 8vh;
-      background-color: #bdc3c7;
-    }
 </style>

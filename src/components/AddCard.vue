@@ -1,10 +1,11 @@
 <template lang="html">
-  <div class='addCard'>
-    <textarea name="name" v-model="front" placeholder="Front of card" class='front'></textarea>
-    <textarea name="name"  v-model="back" placeholder="Back of card" class='back'></textarea>
-    <br>
-    <button @click="saveCard" class='btn btn-lg btn-add'>Save</button>
-  </div>
+  <ul>
+    <li><textarea v-model="front" placeholder="Front of card" class='front'></textarea></li>
+    <li>
+      <textarea  v-model="back" placeholder="Back of card" class='back'></textarea><br>
+      <button @click="saveCard" class='btn btn-add'>Save</button>
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -41,37 +42,26 @@ export default {
 </script>
 
 <style lang="css" scoped>
-  .addCard {
-    display: inline-block;
-    margin: 0 auto;
-    padding-top: 4vh;
+  ul {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 2em;
   }
 
-  .front {
-    margin-left: 5vw;
-    width: 40vw;
+  textarea {
+    padding: 0.5em;
+    font-size: 1.2em;
+    width: 30vw;
     height: 30vh;
-    font-size: 2.3vw;
-    padding: 0.8vw;
+    margin: 1em 2em 1em 0;
   }
 
-  .back {
-    margin-right: 5vw;
-    width: 40vw;
-    height: 30vh;
-    font-size: 2.3vw;
-    padding: 0.8vw;
-  }
 
   .btn-add {
-    float: right;
-    display: block;
-    margin-top: 4vh;
-    margin-right: 5vw;
-    height: 8vh;
-    width: 14vw;
-    font-weight: 400;
-    font-size: 3vw;
     color: #ecf0f1;
     background-color: #e67e22;
   }

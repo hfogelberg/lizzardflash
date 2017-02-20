@@ -3,12 +3,13 @@
     <app-header :user='displayName'></app-header>
     <h2>Stacks</h2>
 
-    <router-link to="newstack" class='btn btn-lg btn-new-stack pull-right scaling-button '>
-      <i class="glyphicon glyphicon-plus scaling-button "></i>New Stack
-    </router-link>
-    <br>
-    <br>
-    <hr>
+    <ul class='toolbar'>
+      <li >
+        <router-link to="newstack" class='btn-new-stack scaling-button '>
+          <img src="/assets/svg/plus.svg" alt='new'/>New Stack
+        </router-link>
+      </li>
+    </ul>
 
     <div class="sk-cube-grid" v-if='isLoading'>
       <div class="sk-cube sk-cube1"></div>
@@ -22,9 +23,12 @@
       <div class="sk-cube sk-cube9"></div>
     </div>
 
-    <div class='stacks' v-for="stack in stacks" v-else>
-      <stack :stack='stack'></stack>
-    </div>
+    <ul class='stacks'  v-else>
+      <!-- <li v-for="stack in stacks" class='stack'> -->
+      <li v-for="stack in stacks">
+        <stack :stack='stack'></stack>
+      </li>
+    </ul>
 
   </div>
 </template>
@@ -84,10 +88,37 @@ export default {
 </script>
 
 <style lang="css" scoped>
-    .stacks {
-      display: inline-block;
+
+.stacks-page {
+}
+
+  ul.toolbar {
+    padding: 0 2em 5em 2em;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  img {
+    margin-right: 1em;
+  }
+
+    ul.stacks {
+      display: flex;
+      flex-direction: row;
+      flex-flow: stretch;
+      flex-wrap: wrap;
+      list-style: none;
     }
 
+    /*li.stack {
+      /*flex: 1;
+      height: 10em;
+      min-width: 20em;
+      margin: 1em;
+    }*/
+
+    /*
     .btn-new-stack {
       background-color: #c0392b;
       color: #ecf0f1;
@@ -95,5 +126,5 @@ export default {
 
     i {
       background-color: #c0392b;
-    }
+    }*/
 </style>

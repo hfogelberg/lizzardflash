@@ -1,17 +1,17 @@
 <template lang="html">
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-           <router-link to="/stacks" class="navbar-brand">
-             Lizzard Flash
-           </router-link>
-         </div>
-
-      <ul class='nav navbar-nav navbar-right'>
-        <li class='user'>{{user}}<button @click='signOut' class='btn btn-warning pull-right'>Sign out</button></li></li>
-      </ul>
-    </div>
-  </nav>
+  <ul>
+    <li>
+     <router-link to="/stacks" class="brand">
+       Lizzard Flash
+     </router-link>
+    </li>
+    <li >
+      {{user}}
+    </li>
+    <li>
+      <button @click='signOut' class='btn btn-warning pull-right'>Sign out</button>
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -31,12 +31,20 @@ export default {
 
 <style lang="css" scoped>
 
-  nav {
-    padding-top: 20px;
-    background-color: #fff;
-    font-weight: 300;
-    font-size: 120%;
-    border-color: #fff;
+  ul {
+    display: flex;
+    list-style: none;
+    align-items: center;;
+  }
+
+  li  {
+    flex: 0 0 auto;
+    margin: 2em;
+  }
+
+  li:nth-child(1) {
+    margin-right: auto;
+    text-decoration: none;
   }
 
   button {
@@ -44,7 +52,11 @@ export default {
     margin-left: 10px;
   }
 
-  .user {
-    margin-right: 20px;
+  .brand {
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 400;
+    text-transform: uppercase;
   }
+
 </style>
