@@ -9,7 +9,7 @@
       {{user}}
     </li>
     <li>
-      <button @click='signOut' class='btn btn-warning pull-right'>Sign out</button>
+      <button @click='signOut' class='btn-sign-out'>Sign out</button>
     </li>
   </ul>
 </template>
@@ -54,9 +54,35 @@ export default {
 
   .brand {
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: 400;
     text-transform: uppercase;
+    color: #34495e;
+  }
+
+  a {
+    text-decoration: none;
+    color: #34495e;
+  }
+
+  a:link {
+    text-decoration: none;
+    color: #34495e;
+  }
+
+  a:visited {
+    text-decoration: none;
+    color: #34495e;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: #34495e;
+  }
+
+  a:active {
+    text-decoration: none;
+    color: #34495e;
   }
 
 </style>

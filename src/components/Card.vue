@@ -23,11 +23,13 @@ export default {
     list-style: none;
     margin: 1em;
     flex: 1;
-    background-color: rgb(194, 176, 122);
+    color: #ecf0f1;
+    background-color: #3498db;
     width: 15em;
     height: 10em;
     justify-content: space-between;
     position: relative;
+    border-radius: 20px;
   }
 
   .front {
@@ -51,7 +53,7 @@ export default {
     display: flex;
     list-style: none;
     width: 15em;
-    padding: 0 0 0.2em 0.5em;
+    padding: 0 0.5em 0.2em 0.5em;
   }
 
   ul.buttons li {
@@ -59,6 +61,8 @@ export default {
   }
 
   img {
+    height: 1.8em;
+    width: auto;
     margin-right: 0.5em;
   }
 

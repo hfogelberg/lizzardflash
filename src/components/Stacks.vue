@@ -1,15 +1,17 @@
 <template lang="html">
   <div class="stacks-page">
     <app-header :user='displayName'></app-header>
-    <h2>Stacks</h2>
+    <header>
+      <h2>Stacks</h2>
 
-    <ul class='toolbar'>
-      <li >
-        <router-link to="newstack" class='btn-new-stack scaling-button '>
-          <img src="/assets/svg/plus.svg" alt='new'/>New Stack
-        </router-link>
-      </li>
-    </ul>
+      <ul class='toolbar'>
+        <li >
+          <router-link to="newstack" class='btn-new-stack scaling-button '>
+            <img src="/assets/svg/plus.svg" alt='new'/>New Stack
+          </router-link>
+        </li>
+      </ul>
+    </header>
 
     <div class="sk-cube-grid" v-if='isLoading'>
       <div class="sk-cube sk-cube1"></div>
@@ -88,21 +90,74 @@ export default {
 
 <style lang="css" scoped>
   ul.toolbar {
-    padding: 0 2em 5em 2em;
+    padding: 0 2em 2em 1em;
     list-style-type: none;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
   }
 
-  img {
-    margin-right: 1em;
+  header h2 {
+    color: #d35400;
   }
+
+    img {
+      margin-right: 1em;
+      height: 1.8em;
+    }
 
     ul.stacks {
       display: flex;
       flex-direction: row;
-      flex-flow: stretch;
+      justify-content: center;
       flex-wrap: wrap;
       list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+
+    a:visited {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    a:active {
+      text-decoration: none;
+    }
+
+
+    .btn-new-stack {
+      font-size: 2em;
+      font-weight: 400;
+      color: #34495e;
+    }
+
+    .btn-new-stack:link {
+      text-decoration: none;
+      color: #34495e;
+    }
+
+    .btn-new-stack:visited {
+      text-decoration: none;
+      color: #34495e;
+    }
+
+    .btn-new-stack:hover {
+      text-decoration: none;
+      color: #34495e;
+    }
+
+    .btn-new-stack:active {
+      text-decoration: none;
+      color: #34495e;
     }
 </style>

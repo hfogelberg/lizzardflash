@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="stack">
     <router-link :to="'stack/' + stack.key">
-      <h4>{{stack.title}}</h4><br>
+      <div class='stack-title'>{{stack.title}}</div>
       <div class="stack-lang">{{stack.fromLang}} - {{stack.toLang}}</div>
     </router-link>
   </div>
@@ -16,10 +16,11 @@ export default {
 <style lang="css" scoped>
   .stack {
     flex: 1;
-    height: 10em;
-    min-width: 12em;
-    margin: 1em;
-    background-color: rgb(169, 227, 30);
+    max-height: 30vh;
+    max-width: 22vw;
+    margin: 1vw;
+    background-color: #2ecc71;
+    padding: 0.8em;
 
     -webkit-transition: all 200ms ease-in;
     -webkit-transform: scale(1);
@@ -29,6 +30,22 @@ export default {
     -moz-transform: scale(1);
     transition: all 200ms ease-in;
     transform: scale(1);
+  }
+
+  .stack-title {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: 400;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    color: #ecf0f1;
+    margin-bottom: 0.8em;
+  }
+
+  .stack-lang {
+    text-align: center;
+    font-size: 1.2em;
+    color: #ecf0f1;
   }
 
   .stack:hover {
