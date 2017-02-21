@@ -25,6 +25,8 @@ export default {
 
   .from {
     background-color: #3498db;
+    font-size: 1.8em;
+    font-weight: 300;
     color: #ecf0f1;
   }
 </style>

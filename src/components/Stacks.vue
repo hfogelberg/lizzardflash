@@ -102,8 +102,8 @@ export default {
   }
 
     img {
-      margin-right: 1em;
-      height: 1.8em;
+      margin-right: 0.5em;
+      height: 1.3em;
     }
 
     ul.stacks {
@@ -136,7 +136,7 @@ export default {
 
 
     .btn-new-stack {
-      font-size: 2em;
+      font-size: 1.3em;
       font-weight: 400;
       color: #d35400;
     }

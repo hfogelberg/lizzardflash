@@ -22,9 +22,6 @@ export default {
     background-color: #2ecc71;
     padding: 0.8em;
     border-radius: 20px;
-    -webkit-box-shadow: 10px 10px 3px 0px rgba(127, 140, 141,1.0);
-    -moz-box-shadow: 10px 10px 3px 0px rgba(127, 140, 141,1.0);
-    box-shadow: 10px 10px 3px 0px rgba(127, 140, 141,1.0);
 
     -webkit-transition: all 200ms ease-in;
     -webkit-transform: scale(1);

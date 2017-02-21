@@ -72,6 +72,7 @@ export default {
 
     dbRef.on('value', (snap)=>{
       this.title = snap.val().title
+      this.$store.dispatch('setStackname', this.title)
       this.fromLang = snap.val().fromLang
       this.toLang = snap.val().toLang
       this.comment = snap.val().comment

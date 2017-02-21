@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="practice">
     <header>
-      <h2>Practice</h2>
+      <h2>{{stackName}}</h2>
       <router-link :to="'/stack/' + this.$store.getters.stackId" class='btn-back'><img src="/assets/svg/arrow-left.svg" alt="Go back" class='back-icon'></router-link>
     </header>
 
@@ -23,7 +23,8 @@ export default {
       return {
         showFront: true,
         showBack: false,
-        randomCards: []
+        randomCards: [],
+        stackName: ''
       }
   },
 
@@ -34,6 +35,7 @@ export default {
 
   created() {
     this.randomCards = this.$store.getters.randomCards
+    this.stackName = this.$store.getters.stackName
     this.randomCards[0].show = true
   },
 
@@ -66,9 +68,18 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  header {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  header h2 {
+    color: #ecf0f1;
+  }
+
   .btn-back {
-    margin-left: 2em;
-    height: 300%;
+    margin-left: 3em;
+    height: 400%;
     width: auto;
   }
 
@@ -77,8 +88,11 @@ export default {
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    width: 15em;
-    height: 15em;
+    margin-top: 1em;
+    width: 80vw;
+    height: 80vw;
+    max-width: 20em;
+    max-height: 20em;
     border-radius: 10px;
     position: relative;
     border: 1 px solid black;
