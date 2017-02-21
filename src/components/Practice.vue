@@ -1,10 +1,9 @@
 <template lang="html">
   <div class="practice">
     <header>
-      <h2>Practice</h2>    
+      <h2>Practice</h2>
+      <router-link :to="'/stack/' + this.$store.getters.stackId" class='btn-back'><img src="/assets/svg/arrow-left.svg" alt="Go back" class='back-icon'></router-link>
     </header>
-
-    <router-link :to="'/stack/' + this.$store.getters.stackId" class='btn-back'><img src="/assets/svg/arrow-left.svg" alt="Go back" class='back-icon'></router-link>
 
     <ul class='cards-list'>
       <li class="list-unstyled random-card" v-for="card in randomCards" v-show="card.show">
@@ -40,13 +39,16 @@ export default {
 
   methods: {
     knowIt() {
-      // const dbRef = firebase.database().ref().child(`${this.userId}/stacks/${this.stackId}/cards/${this.cardId}`)
-      // let update = {
-      //   knowIt: true
-      // }
+      let update = {
+        knowIt: true
+      }
+
+      const ref = firebase.database().ref().child(`${this.userId}/stacks/${this.stackId}/cards/${this.cardId}`)
+      ref.update(update)
+
       this.showFront = true
       this.showBack = false
-        this.$store.dispatch('nextCard')
+      this.$store.dispatch('nextCard')
     },
 
     dontKnowIt() {
@@ -64,18 +66,21 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.btn-back {
-  margin-left: 2em;
-  height: 300%;
-  width: auto;
-}
-  /*.random-card {
-    text-align: center;
+  .btn-back {
+    margin-left: 2em;
+    height: 300%;
+    width: auto;
   }
 
-.back-icon {
-  fill: #ff0000;
-  height: 8vh;
-}*/
-
+  .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 15em;
+    height: 15em;
+    border-radius: 10px;
+    position: relative;
+    border: 1 px solid black;
+  }
 </style>

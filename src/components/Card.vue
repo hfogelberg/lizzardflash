@@ -27,6 +27,8 @@
     background-color: #3498db;
     width: 15em;
     height: 10em;
+    max-width: 26em;
+    max-height: 18em;
     justify-content: space-between;
     position: relative;
     border-radius: 20px;
@@ -34,13 +36,13 @@
 
   .front {
     text-align: center;
-    font-size: 2em;
+    font-size: 1.8em;
     font-weight: 300;
   }
 
   .back {
     text-align: center;
-    font-size: 1.7em;
+    font-size: 1.5em;
     font-weight: 300;
   }
 
@@ -64,15 +66,6 @@
     height: 1.8em;
     width: auto;
     margin-right: 0.5em;
-  }
-
-  .card-button {
-    background-color: Transparent;
-    background-repeat:no-repeat;
-    border: none;
-    cursor:pointer;
-    overflow: hidden;
-    outline:none;
   }
 
   .buttons  li:nth-child(1) {

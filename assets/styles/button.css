@@ -1,4 +1,4 @@
-.btn {
+/*.btn {
   height: 1.8em;
   width: 5em;
   color: #ecf0f1;
@@ -8,6 +8,15 @@
   text-align: center;
   border-radius: 20px;
   line-height: 2em;
+}*/
+
+.card-button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
 }
 
 .scaling-button {

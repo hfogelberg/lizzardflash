@@ -16,8 +16,8 @@ export default {
 <style lang="css" scoped>
   .stack {
     flex: 1;
-    max-height: 30vh;
-    max-width: 22vw;
+    max-width: 12em;
+    max-height: 8em;
     margin: 1vw;
     background-color: #2ecc71;
     padding: 0.8em;

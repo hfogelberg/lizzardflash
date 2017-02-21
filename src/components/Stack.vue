@@ -106,19 +106,17 @@ export default {
   }
 
 header {
-  padding-top: 4vh;
-  padding-bottom: 4vh;
+  padding-bottom: 1em;
   text-align: center;
-  border-radius: 20px;
-  margin-bottom: 3em;
+  margin-bottom: 1em;
 }
 
 header .lang {
-  font-size: 2em;
+  font-size: 1.7em;
 }
 
 header .comment {
-  font-size: 2em;
+  font-size: 1.7em;
 }
 
 .btn-practice {
