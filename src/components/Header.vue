@@ -5,11 +5,9 @@
        Lizzard Flash
      </router-link>
     </li>
-    <li >
+    <li class='user'>
       {{user}}
-    </li>
-    <li>
-      <button @click='signOut' class='btn-sign-out'>Sign out</button>
+      <button @click='signOut' class='btn-sign-out transparent-button'>Sign out</button>
     </li>
   </ul>
 </template>
@@ -57,32 +55,40 @@ export default {
     font-size: 1.3em;
     font-weight: 400;
     text-transform: uppercase;
-    color: #34495e;
+    color: #ecf0f1;
   }
 
   a {
     text-decoration: none;
-    color: #34495e;
+    color: #ecf0f1;
   }
 
   a:link {
     text-decoration: none;
-    color: #34495e;
+    color:#ecf0f1;
   }
 
   a:visited {
     text-decoration: none;
-    color: #34495e;
+    color: #ecf0f1;
   }
 
   a:hover {
     text-decoration: none;
-    color: #34495e;
+    color: #ecf0f1;
   }
 
   a:active {
     text-decoration: none;
-    color: #34495e;
+    color: #ecf0f1;
   }
 
+  button {
+    color: #ecf0f1;
+    margin-left: 1px;
+  }
+
+  .user {
+    color: #ecf0f1;
+  }
 </style>

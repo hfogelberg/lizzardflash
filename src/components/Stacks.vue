@@ -2,7 +2,7 @@
   <div class="stacks-page">
     <app-header :user='displayName'></app-header>
     <header>
-      <h2>Stacks</h2>
+      <!-- <h2>Stacks</h2> -->
 
       <ul class='toolbar'>
         <li >
@@ -138,26 +138,26 @@ export default {
     .btn-new-stack {
       font-size: 2em;
       font-weight: 400;
-      color: #34495e;
+      color: #d35400;
     }
 
     .btn-new-stack:link {
       text-decoration: none;
-      color: #34495e;
+      color: #d35400;
     }
 
     .btn-new-stack:visited {
       text-decoration: none;
-      color: #34495e;
+      color: #d35400;
     }
 
     .btn-new-stack:hover {
       text-decoration: none;
-      color: #34495e;
+      color: #d35400;
     }
 
     .btn-new-stack:active {
       text-decoration: none;
-      color: #34495e;
+      color: #d35400;
     }
 </style>

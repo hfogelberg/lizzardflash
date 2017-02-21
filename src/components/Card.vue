@@ -6,7 +6,7 @@
       <ul class='buttons'>
         <li><img src='/assets/svg/check-mark.svg'/></li>
         <li><img src='/assets/svg/pencil.svg' alt='edit' /></li>
-        <li><button @click='$parent.deleteCard(card.key)' class='card-button'><img src='/assets/svg/trash.svg' alt='delete' /></button></li>
+        <li><button @click='$parent.deleteCard(card.key)' class='transparent-button'><img src='/assets/svg/trash.svg' alt='delete' /></button></li>
       </li>
     </ul>
   </ul>

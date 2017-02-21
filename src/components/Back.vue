@@ -4,9 +4,9 @@
       {{card.back}}
     </div>
     <div class='button-row'>
-      <button class='card-button dont-know' @click='$parent.dontKnowIt'><img src="/assets/svg/check-mark.svg" alt="Know it" style='icon'>Know it</button>
+      <button class='transparent-button dont-know' @click='$parent.dontKnowIt'><img src="/assets/svg/check-mark.svg" alt="Know it" style='icon'>Know it</button>
       <span>
-        <button class='card-button know' @click='$parent.knowIt'><img src="/assets/svg/x-mark.svg" alt="Don´t know it" class='icon'>Don't know it</button>
+        <button class='transparent-button know' @click='$parent.knowIt'><img src="/assets/svg/x-mark.svg" alt="Don´t know it" class='icon'>Don't know it</button>
       </span>
     </div>
   </div>

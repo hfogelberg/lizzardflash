@@ -106,6 +106,7 @@ export default {
   }
 
 header {
+  color: #ecf0f1;
   padding-bottom: 1em;
   text-align: center;
   margin-bottom: 1em;

@@ -1,16 +1,16 @@
-/*.btn {
+.btn {
   height: 1.8em;
-  width: 5em;
+  width: 4em;
   color: #ecf0f1;
-  font-weight: 400;
-  font-size: 1.5em;
+  font-weight: 300;
+  font-size: 1.2em;
   text-decoration: none;
   text-align: center;
   border-radius: 20px;
-  line-height: 2em;
-}*/
+  line-height: 1.8em;
+}
 
-.card-button {
+.transparent-button {
   background-color: Transparent;
   background-repeat:no-repeat;
   border: none;
