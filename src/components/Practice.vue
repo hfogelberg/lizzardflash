@@ -1,9 +1,10 @@
 <template lang="html">
   <div class="practice">
-    <h2>Practice</h2>
-    <hr>
+    <header>
+      <h2>Practice</h2>    
+    </header>
 
-    <router-link :to="'/stack/' + this.$store.getters.stackId" class='btn btn-back'><img src="/assets/arrow-left.svg" alt="Go back" class='back-icon'></router-link>
+    <router-link :to="'/stack/' + this.$store.getters.stackId" class='btn-back'><img src="/assets/svg/arrow-left.svg" alt="Go back" class='back-icon'></router-link>
 
     <ul class='cards-list'>
       <li class="list-unstyled random-card" v-for="card in randomCards" v-show="card.show">
@@ -63,13 +64,18 @@ export default {
 </script>
 
 <style lang="css" scoped>
-  .random-card {
+.btn-back {
+  margin-left: 2em;
+  height: 300%;
+  width: auto;
+}
+  /*.random-card {
     text-align: center;
   }
 
 .back-icon {
   fill: #ff0000;
   height: 8vh;
-}
+}*/
 
 </style>

@@ -4,9 +4,9 @@
       {{card.back}}
     </div>
     <div class='button-row'>
-      <button class='btn btn-danger dont-know' @click='$parent.dontKnowIt'><img src="/assets/check-mark.svg" alt="Know it" style='icon'></button>
+      <button class='dont-know' @click='$parent.dontKnowIt'><img src="/assets/svg/check-mark.svg" alt="Know it" style='icon'></button>
       <span>
-        <button class='btn btn-success know' @click='$parent.knowIt'><img src="/assets/x-mark.svg" alt="Don´t know it" class='icon'></button>
+        <button class='know' @click='$parent.knowIt'><img src="/assets/svg/x-mark.svg" alt="Don´t know it" class='icon'></button>
       </span>
     </div>
   </div>
@@ -23,6 +23,8 @@
 <style lang="css" scoped>
     .back {
       background-color: #bdc3c7;
+      display: flex;
+      position: relative;
     }
 
     .to {
@@ -31,10 +33,9 @@
     }
 
     .button-row {
-      background-color: #bdc3c7;
+      justify-content: space-between;
       position: absolute;
-      bottom: 4vh;
-      right: 4vh;
+      bottom: 0;
     }
 
     .dont-know {

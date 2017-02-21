@@ -45,9 +45,6 @@ export default {
   .button-row {
     position: absolute;
     bottom: 0;
-    /*display: flex;
-    flex: 0 0 auto;
-    margin-bottom: 0;*/
   }
 
   ul.buttons  {
