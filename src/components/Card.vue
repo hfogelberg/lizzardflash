@@ -6,16 +6,16 @@
       <ul class='buttons'>
         <li><img src='/assets/svg/check-mark.svg'/></li>
         <li><img src='/assets/svg/pencil.svg' alt='edit' /></li>
-        <li><img src='/assets/svg/trash.svg' alt='delete' /></li>
+        <li><button @click='$parent.deleteCard(card.key)' class='card-button'><img src='/assets/svg/trash.svg' alt='delete' /></button></li>
       </li>
     </ul>
   </ul>
 </template>
 
 <script>
-export default {
-  props: ['card']
-}
+  export default {
+    props: ['card']
+  }
 </script>
 
 <style lang="css" scoped>
@@ -64,6 +64,15 @@ export default {
     height: 1.8em;
     width: auto;
     margin-right: 0.5em;
+  }
+
+  .card-button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
   }
 
   .buttons  li:nth-child(1) {

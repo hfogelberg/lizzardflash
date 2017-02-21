@@ -55,11 +55,10 @@ export default {
   textarea {
     padding: 0.5em;
     font-size: 1.2em;
-    width: 30vw;
-    height: 30vh;
+    max-width: 30vw;
+    max-height: 30vh;
     margin: 1em 2em 1em 0;
   }
-
 
   .btn-add {
     color: #ecf0f1;
