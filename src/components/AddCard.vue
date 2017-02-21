@@ -56,7 +56,7 @@ export default {
     padding: 0.5em;
     font-size: 1.2em;
     max-width: 30vw;
-    max-height: 30vh;
+    max-height: 30vw;
     margin: 1em 2em 1em 0;
   }
 
