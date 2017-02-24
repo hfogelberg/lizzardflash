@@ -1,9 +1,12 @@
 <template>
   <div class="auth">
-    <h1>Lizzard Flash</h1>
-    <h2>Sign up or log in</h2>
-
-    <div id="firebaseui-auth-container"></div>
+    <header>
+      <h1>Lizzard Flash</h1>
+      <h2>Sign up or log in</h2>
+    </header>
+    <div class='buttons'>
+      <div id="firebaseui-auth-container"></div>
+    </div>
   </div>
 </template>
 
@@ -49,8 +52,29 @@ export default {
 </script>
 
 <style src="firebaseui/dist/firebaseui.css"></style>
+
 <style scoped>
-    .h2 {
-      margin-bottom: 12vh;
-    }
+  .auth {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  header h1 {
+    color: #ecf0f1;
+    text-align: center;
+  }
+
+  header h2 {
+    color: #ecf0f1;
+    text-align: center;
+    margin-bottom: 4em;
+  }
+
+  .buttons {
+    justify-content: center;
+    align-items: center;
+  }
 </style>
