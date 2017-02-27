@@ -3,12 +3,18 @@
     <div class='card-text to'>
       {{card.back}}
     </div>
-    <div class='button-row'>
-      <button class='transparent-button dont-know' @click='$parent.dontKnowIt'><img src="/assets/svg/check-mark.svg" alt="Know it" style='icon'>Know it</button>
-      <span>
-        <button class='transparent-button know' @click='$parent.knowIt'><img src="/assets/svg/x-mark.svg" alt="Don´t know it" class='icon'>Don't know it</button>
-      </span>
-    </div>
+    <ul class='button-row'>
+      <li>
+        <button class='transparent-button dont-know' @click='$parent.dontKnowIt'>
+          <img src="/assets/svg/check-mark.svg" alt="Know it" style='icon'>Know it
+        </button>
+      </li>
+      <li>
+        <button class='transparent-button know' @click='$parent.knowIt'>
+          <img src="/assets/svg/x-mark.svg" alt="Don´t know it" class='icon'>Don't know it
+        </button>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -34,18 +40,25 @@
       font-weight: 400;
     }
 
-    .button-row {
+    ul.button-row {
+      width: 100%;
+      list-style: none;
+      display: flex;
       justify-content: space-between;
       position: absolute;
       bottom: 0;
     }
 
+    /*.button-row li:nth-child(1) {
+      margin-right: auto;
+    }*/
+
     .dont-know {
-      margin-right: 4vh;
+      padding-right: 0.5em;
     }
 
     .know-it {
-      margin-right: 4vh;
+      padding-left: 0.5em;
     }
 
     img {
